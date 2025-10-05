@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloomBly - Plantas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gradient <%= plant.family.toLowerCase() %>">
+  <div class="main-container">
+    <!-- Tarjeta -->
+    <div class="card">
+      <h1><%= plant.name %></h1>
+      <h2><%= plant.scientific %></h2>
+      <p><strong>Familia:</strong> <%= plant.family %></p>
+      <p><strong>Dato curioso:</strong> <%= plant.funFact %></p>
+    </div>
+
+    <!-- Imagen de planta -->
+    <div class="plant-container">
+      <img src="/images/<%= plant.image %>" alt="<%= plant.name %>" class="plant-image">
+    </div>
+  </div>
+
+  <!-- Botones de navegación -->
+  <div class="button-container">
+    <a href="/?index=<%= (index - 1 + total) % total %>" class="button">&#8592;</a>
+    <a href="/?index=<%= (index + 1) % total %>" class="button">&#8594;</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Rosa",
+    "scientific": "Rosa spp.",
+    "family": "Rosaceae",
+    "funFact": "Las rosas pueden vivir más de 100 años.",
+    "image": "rosa.png"
+  },
+  {
+    "name": "Girasol",
+    "scientific": "Helianthus annuus",
+    "family": "Asteraceae",
+    "funFact": "Los girasoles siguen la luz del sol durante el día.",
+    "image": "girasol.jpg"
+  },
+  {
+    "name": "Lavanda",
+    "scientific": "Lavandula angustifolia",
+    "family": "Lamiaceae",
+    "funFact": "La lavanda se utiliza en aromaterapia por sus propiedades relajantes.",
+    "image": "lavanda.png"
+  }
+]

@@ -1,0 +1,150 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens de color BLOOMBLY */
+:root {
+  --background: 220 25% 6%;
+  --foreground: 150 10% 98%;
+  --card-foreground: 150 10% 98%;
+  --radius: 0.75rem;
+
+  --nature-green: 142 76% 45%;
+  --shadow-card: 0 8px 32px hsla(220,25%,0%,0.4);
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4,0,0.2,1);
+
+  /* Gradientes predefinidos */
+  --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%), hsl(230 35% 15%), hsl(142 40% 15%));
+  --gradient-card: linear-gradient(145deg, hsl(220 20% 12%), hsl(220 20% 8%));
+  --gradient-accent: linear-gradient(90deg, hsl(142 76% 45%), hsl(180 65% 55%));
+  --gradient-cosmic: linear-gradient(135deg, hsl(230 60% 50%), hsl(280 65% 60%));
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: hsl(var(--foreground));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+  /* Fondo degradado animado por defecto */
+  background: var(--gradient-hero);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Animación de gradiente */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  gap: 7rem;
+  margin-top: 8vh;
+  margin-bottom: 2rem;
+}
+
+@media(min-width:768px) {
+  .main-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 10vh;
+  }
+}
+
+/* Tarjeta vertical */
+.card {
+  background: rgba(20,25,35,0.75);
+  color: hsl(var(--card-foreground));
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(6px);
+  flex: none;
+  width: 300px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.card h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.card h2 { font-size: 1.2rem; font-style: italic; margin-bottom: 1rem; }
+.card p  { font-size: 1rem; margin-bottom: 0.5rem; }
+
+/* Imagen de planta */
+.plant-container {
+  flex: none;
+  width: 300px;
+  height: 70vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Botones de navegación */
+.button-container {
+  display: flex;
+  gap: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.button {
+  background: rgba(20,25,35,0.75);
+  border-radius: 50%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px hsla(142,76%,45%,0.3);
+  transition: var(--transition-smooth);
+  color: hsl(var(--foreground));
+  text-decoration: none;
+}
+
+.button svg {
+  width: 24px;
+  height: 24px;
+  stroke: hsl(var(--foreground));
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 0 30px hsla(142,76%,45%,0.6);
+}
+
+/* Opcional: clases por familia si quieres diferentes gradientes */
+.bg-rosaceae { background: var(--gradient-hero); }
+.bg-lamiaceae { background: var(--gradient-card); }
+.bg-asteraceae { background: var(--gradient-accent); }
+.bg-brassicaceae { background: var(--gradient-cosmic); }
